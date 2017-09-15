@@ -36,7 +36,7 @@ def process(source_directory, destination_directory, logfile):
             filename = rename(dirname, logfile)
         
             log('Saving the new combined audio file to ' + filename, logfile)
-            combined.export(filename, format='wav')
+            combined.export(os.path.join(destination_directory, filename), format='wav')
             log('Iteration through '+ dirname + ' is over \n\n', logfile)
     log('Process end, files saved in destination directory', logfile)
     
@@ -50,4 +50,3 @@ def main():
         
 if __name__=='__main__':
     main()
-    
